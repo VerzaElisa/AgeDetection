@@ -1,0 +1,26 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.server
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./protos:/app/protos
+    networks:
+      - private_network
+  client:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.client
+    volumes:
+      - ./protos:/app/protos
+    networks:
+      - private_network
+    depends_on:
+      - server
+networks:
+  private_network:
+    name: private_network
+    driver: bridge

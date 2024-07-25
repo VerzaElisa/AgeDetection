@@ -1,0 +1,10 @@
+services:
+  jupy:
+    build: .
+    volumes:
+      - ./ToExecute:/app
+    ports:
+      - "8888:8888"
+volumes:
+  ToExecute:
+    name: "ToExecute"

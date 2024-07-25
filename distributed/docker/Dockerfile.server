@@ -1,0 +1,14 @@
+FROM tensorflow/tensorflow:latest
+
+RUN pip install tensorflow_federated grpcio grpcio-tools
+
+ENV PYTHONUNBUFFERED = 1
+
+COPY server.py /app/server.py
+COPY docker/start_server.sh /app/start.sh
+
+RUN chmod +x /app/start.sh
+WORKDIR /app
+EXPOSE 50051
+# Comando di avvio
+CMD ["./start.sh"]
