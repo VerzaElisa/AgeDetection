@@ -1,2 +1,6 @@
 .vscode/
-centralized/ToExecute/.ipynb_checkpoints
+/local-federated/ToExecute/.ipynb_checkpoints
+/local-federated/ToExecute/Tutorial
+/local-federated/ToExecute/emnist-letters.csv
+brainstorming.txt
+/problems/emnist-letters.csv
